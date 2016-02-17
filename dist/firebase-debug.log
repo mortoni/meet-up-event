@@ -1,0 +1,12 @@
+[debug] ----------------------------------------------------------------------
+[debug] Command:      /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] Platform:     darwin
+[debug] Node Version: v4.1.2
+[debug] Time:         Mon Feb 15 2016 10:38:50 GMT+1000 (AEST)
+[debug] ----------------------------------------------------------------------
+[debug] 
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/firebase/udacityone/token?token=XXX 
+[debug] <<< HTTP RESPONSE 200
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/firebase/udacityone/token?token=XXX 
+[debug] <<< HTTP RESPONSE 200
+[info] 

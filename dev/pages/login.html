@@ -1,0 +1,76 @@
+<div class="content-logo">
+    <img src="assets/images/events.png" class="img-logo">
+    <h4>Meet-Up Event Planner</h4>
+</div>
+<div class="col-md-4 col-md-offset-4">
+    <div class="wrapper">
+        <input type="checkbox" name="flipper__checkbox" id="flipper__checkbox" class="flipper__checkbox" hidden />
+        <div class="form__container">
+
+            <div class="form__login">
+                <h1 class="form__header">Login</h1>
+                <form class="form-signin" name="signinForm" role="form" autocomplete="off">
+
+                    <div class="form-group" ng-class="{ 'has-error' : signinForm.email.$invalid }">
+                        <label>Email</label>
+                        <input type="email" name="email" class="form-control" ng-model="user.email">
+                        <p class="help-block" ng-show="signinForm.email.$invalid">Enter a valid email.</p>
+                    </div>
+
+                    <div class="form-group" ng-class="{ 'has-error' : signinForm.password.$invalid }">
+                        <label>Password</label>
+                        <input type="password" name="password" class="form-control" ng-model="user.password" ng-minlength="8">
+                        <p class="help-block" ng-show="signinForm.password.$error.minlength">Min password length is 8 characters</p>
+                    </div>
+
+                    <p style="color:red;" ng-show="signError">{{signErrorMessage}}</p>
+
+                    <label for="flipper__checkbox" class="form__link"><h6>Sign Up</h6></label>
+
+                    <button ng-disabled="!user.email || !user.password" type="button" ng-click="doLogin()" class="btn btn-lg btn-primary btn-block">SignIn</button>
+                    <br>
+                    <div class="alert alert-success alert-dismissible" role="alert" ng-show="createdUser">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <strong>Successfully</strong> created user account.
+                    </div>
+                </form>
+            </div>
+
+            <div class="form__signup">
+                <h1 class="form__header">Sign Up</h1>
+                <form class="form-signin" name="regForm">
+
+                    <div class="form-group" ng-class="{ 'has-error' : regForm.name.$invalid }">
+                        <label>Name</label>
+                        <input type="text" name="name" class="form-control" ng-model="guest.name" ng-minlength="3">
+                        <p class="help-block" ng-show="regForm.name.$invalid">Min name length is 3 characters.</p>
+                    </div>
+
+                    <div class="form-group" ng-class="{ 'has-error' : regForm.email.$invalid }">
+                        <label>Email</label>
+                        <input type="email" name="email" class="form-control" ng-model="guest.email">
+                        <p class="help-block" ng-show="regForm.email.$invalid">Enter a valid email.</p>
+                    </div>
+
+                    <div class="form-group" ng-class="{ 'has-error' : regForm.password.$invalid }">
+                        <label>Password</label>
+                        <input type="text" name="password" class="form-control" ng-model="guest.password" ng-minlength="8" ng-change="changePassword()">
+                        <p class="help-block" ng-show="regForm.password.$error.minlength">Min password length is 8 characters.</p>
+                    </div>
+
+                    <div class="form-group" ng-class="{ 'has-error' : regForm.password_confirm.$invalid }">
+                        <label>Confirm Password</label>
+                        <input type="text" name="password_confirm" class="form-control" ng-model="guest.password_confirm" ng-minlength="8" ng-change="change()">
+                        <p class="help-block" ng-show="regForm.password_confirm.$error.minlength">Min password length is 8 characters.</p>
+                    </div>
+
+                    <p style="color:red;" ng-show="regError">{{regErrorMessage}}</p>
+
+                    <label for="flipper__checkbox" class="form__link"><h6>Login</h6></label>
+
+                    <button type="button" ng-click="doRegister()" ng-disabled="!guest.email || !guest.password || !guest.name || guest.password != guest.password_confirm" class="btn btn-lg btn-primary btn-block">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

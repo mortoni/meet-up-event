@@ -1,0 +1,190 @@
+.img-logo{
+    height: 102px;
+    width: 102px;
+}
+
+.content-logo{
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* FLIP CARD LOGIN*/
+.wrapper {
+  position: relative;
+  margin-top: 3rem;
+  margin-right: auto;
+  margin-left: auto;
+  width: remy(320px);
+  background: #fff;
+  box-shadow: 3px 3px 32px rgba(0,0,0,.25);
+  perspective: 1000;
+}
+.flipper__checkbox:checked + .form__container {transform: rotateY(180deg);}
+.form__container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform .25s ease;
+}
+.form__container--inner {padding: 2rem;}
+.form__login,
+.form__signup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  width: 100%;
+  backface-visibility: hidden;
+  background: #fff;
+  box-shadow: 3px 3px 32px rgba(0,0,0,.25);
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(270deg, #2196f3, lighten(#2196f3, 25%));
+    background-size: 400% 400%;
+    animation: gradient 2s ease infinite;
+  }
+}
+.form__login {
+  z-index: 2;
+  padding: 2rem;
+  /* for firefox 31 */
+  transform: rotateY(0deg);
+}
+.form__signup {
+  padding: 2rem;
+  /*margin-left: -3.95rem;*/
+  transform: rotateY(180deg);
+}
+.form__header {
+  margin-bottom: 2rem;
+  font-size: 1.618rem;
+  font-weight: 700;
+  text-align: center;
+}
+.form__group:nth-of-type(n+2) {margin-top: 1.5rem;}
+.label__icon {
+  padding: .97rem 0;
+  float: left;
+  width: 3rem;
+  font-size: 1.25rem;
+  text-align: center;
+  color: rgba(107,141,159,.25);
+  border-top: 1px solid $color--border;
+  border-bottom: 1px solid $color--border;
+  border-left: 1px solid $color--border;
+  border-top-left-radius: $radius;
+  border-bottom-left-radius: $radius;
+}
+.form__element {
+  padding-top: 1.11rem;
+  padding-right: 1rem;
+  padding-bottom: 1.11rem;
+  width: 15.775rem;
+  border-top: 1px solid $color--border;
+  border-right: 1px solid $color--border;
+  border-bottom: 1px solid $color--border;
+  border-left: 0;
+  border-top-right-radius: $radius;
+  border-bottom-right-radius: $radius;
+  &:focus {outline: 0;}
+}
+[type="checkbox"] {
+  position: relative;
+  margin-right: .5rem;
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid $color--border;
+    width: 16px;
+    height: 16px;
+    background: #fff;
+    border-radius: $radius;
+    cursor: pointer;
+  }
+}
+label[for="checkbox"] {
+  position: relative;
+  font-size: .9rem;
+  font-weight: 700;
+}
+.checkbox--forget:checked + .icon--checkbox {
+  opacity: 1;
+  transform: scale(1);
+}
+.icon--checkbox {
+  position: absolute;
+  top: 4px;
+  left: 6px;
+  opacity: 0;
+  cursor: pointer;
+  transition: all .35s cubic-bezier(.91,.8,.84,2.81);
+  transform: scale(0);
+}
+.form__link {
+  font-size: .8rem;
+  font-weight: bold;
+  text-decoration: underline;
+  color: rgba($color--text,.75);
+  cursor: pointer;
+  &:focus,
+  &:hover {color: rgba($color--text,.95);}
+}
+.link--right {float: right;}
+.form__button {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  display: inline-block;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+  color: #fff;
+  background-color: #2196f3;
+  border: 0;
+  border-radius: $radius;
+  cursor: pointer;
+  &:focus,
+  &:hover {background-color: darken(#2196f3, 13%);}
+}
+/*//*/
+
+.line-tracejada{
+  border: 1px dashed #bbbbbb;
+}
+.line-tracejada-blue{
+  border: 1px dashed #0c7cd5;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.img-circle {
+  width: 85px; 
+}
+
+.size-30x30{
+  width: 30px;
+  height: 30px; 
+  margin-right: 10px;
+}
+@media screen 
+  and (min-device-width: 750px) 
+  and (max-device-width: 1600px){
+    .small-device{
+      display: none;
+    }
+}
+
+.event-box{
+    box-shadow: 3px 3px 32px rgba(0,0,0,.25);
+    padding-left: 0px;
+    padding-right: 0px;
+    border: 2px dashed #0c7cd5;
+}
+
