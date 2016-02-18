@@ -25,8 +25,6 @@
 	        	aditional_info: $scope.event.info
 	        };
 
-	        //validar data start precisa ser menor que a data end.
-
         	ref.push(event);
 
             $location.path('/home');
@@ -36,6 +34,29 @@
         function getFormattedDate(date) {
             var str = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear() + " " +  date.getHours() + ":" + date.getMinutes();
             return str;
+        }
+
+        $scope.checkDate = function(){
+            if(!(typeof $scope.event.startDate === 'undefined') || !(typeof $scope.event.endDate === 'undefined'))
+                if(new Date($scope.event.startDate) > new Date($scope.event.endDate))
+                    return false;
+
+            return true;
+        }
+
+        $scope.DateChanged = function(){
+            if(!(typeof $scope.event.startDate === 'undefined') || !(typeof $scope.event.endDate === 'undefined'))
+                if(new Date($scope.event.startDate) > new Date($scope.event.endDate)){
+                    $scope.eventError =  true;
+                    $scope.addEvent.startDate.$invalid = true;
+                    $scope.addEvent.endDate.$invalid = true;
+                    $scope.eventErrorMessage = 'End Date must be higher than Start Date!'
+                    var teste = $scope.addEvent.startDate.$error;
+                }else{
+                    $scope.eventError =  false;
+                    $scope.addEvent.startDate.$invalid = false;
+                    $scope.addEvent.endDate.$invalid = false;
+                }
         }
     }
 })();

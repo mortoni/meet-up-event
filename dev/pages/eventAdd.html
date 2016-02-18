@@ -30,14 +30,16 @@
             <p class="help-block" ng-show="addEvent.host.$error.minlength">Min host length is 3 characters</p>
         </div>
 
-        <div class="form-group">
+        <div class="form-group" ng-class="{ 'has-error' : addEvent.startDate.$invalid }">
         	Start date
-            <input type="datetime-local" name="startDate" class="form-control" ng-model="event.startDate">
+            <input type="datetime-local" name="startDate" class="form-control" ng-model="event.startDate" ng-change="DateChanged()">
+            <p class="help-block" ng-show="addEvent.startDate.$invalid">Invalid Date</p>
         </div>
 
-        <div class="form-group">
+        <div class="form-group" ng-class="{ 'has-error' : addEvent.endDate.$invalid }">
         	End date
-            <input type="datetime-local" name="endDate" class="form-control" ng-model="event.endDate">
+            <input type="datetime-local" name="endDate" class="form-control" ng-model="event.endDate" ng-change="DateChanged()">
+            <p class="help-block" ng-show="addEvent.endDate.$invalid">Invalid Date</p>
         </div>
 
         <div class="form-group">
@@ -55,11 +57,11 @@
             <textarea  name="addInfo" class="form-control" ng-model="event.info" placeholder="e.g. Social White Clothes"></textarea>
         </div>
        
-        <p style="color:red;" ng-show="signError">{{signErrorMessage}}</p>	
+        <p style="color:red;" ng-show="eventError">{{eventErrorMessage}}</p>	
 
         <hr class="line-tracejada">
 
-        <button ng-disabled="!event.name || !event.type || !event.host || !event.startDate || !event.endDate || !event.guest || !event.location" type="button" ng-click="doCreate()" class="btn btn-lg btn-primary btn-block">Create</button>
+        <button ng-disabled="!event.name || !event.type || !event.host || !event.startDate || !event.endDate || !event.guest || !event.location || !checkDate()" type="button" ng-click="doCreate()" class="btn btn-lg btn-primary btn-block">Create</button>
     </form>
 
 </div>
