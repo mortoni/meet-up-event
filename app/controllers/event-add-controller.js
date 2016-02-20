@@ -27,7 +27,7 @@
 
         	ref.push(event);
 
-            $location.path('/home');
+          $location.path('/home');
 
         }
 
@@ -51,7 +51,6 @@
                     $scope.addEvent.startDate.$invalid = true;
                     $scope.addEvent.endDate.$invalid = true;
                     $scope.eventErrorMessage = 'End Date must be higher than Start Date!'
-                    var teste = $scope.addEvent.startDate.$error;
                 }else{
                     $scope.eventError =  false;
                     $scope.addEvent.startDate.$invalid = false;
