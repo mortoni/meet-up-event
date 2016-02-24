@@ -15,10 +15,8 @@ You can see a demo working [here](https://udacityone.firebaseapp.com/).
 - grunt-cli (http://gruntjs.com/)
 
 ## Instalation
-Installation via npm:
-1. `npm install http-server -g`
+Installation via npm: `npm install http-server -g`
 
 ## Running
-My usual way is open Terminal tabs and running on root fold of project:
-1. `http-server`
+My usual way is open Terminal tabs and running on root fold of project: `http-server`
 
