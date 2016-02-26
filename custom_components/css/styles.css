@@ -36,7 +36,7 @@
   margin: 0;
   width: 100%;
   backface-visibility: hidden;
-  background: #fff;
+  background: #ffffff;
   box-shadow: 3px 3px 32px rgba(0,0,0,.25);
   &:after {
     content: "";
@@ -165,16 +165,16 @@ label[for="checkbox"] {
 }
 
 .img-circle {
-  width: 85px; 
+  width: 85px;
 }
 
 .size-30x30{
   width: 30px;
-  height: 30px; 
+  height: 30px;
   margin-right: 10px;
 }
-@media screen 
-  and (min-device-width: 750px) 
+@media screen
+  and (min-device-width: 750px)
   and (max-device-width: 1600px){
     .small-device{
       display: none;
@@ -187,4 +187,3 @@ label[for="checkbox"] {
     padding-right: 0px;
     border: 2px dashed #0c7cd5;
 }
-
