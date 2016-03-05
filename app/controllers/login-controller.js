@@ -12,7 +12,10 @@
         $scope.createdUser = false;
 
         var teste = $rootScope.event_qdt;
-
+        $scope.logout = function(){
+           $rootScope.user = null;
+           $location.path('/login');
+        }
         $scope.doLogin = function(){
             var user = [{
                 name: '',
@@ -32,7 +35,7 @@
                         if(event.id == $scope.user.email)
                             $rootScope.event_qdt++;
                     });
-                    
+
                     $location.path('/home');
                     console.log('Authentication successful');
                 }, function(error) {
@@ -40,10 +43,10 @@
                     $scope.signError = true;
                     $scope.signErrorMessage = error.message;
                     console.log('Authentication failure');
-                    
+
                 });
-        } 
-        
+        }
+
         $scope.doRegister = function(){
             var user = {
                 name: $scope.guest.name,
@@ -82,7 +85,7 @@
         $scope.changePassword = function() {
             if(!(typeof $scope.guest.password_confirm === 'undefined'))
                $scope.change();
-            
+
         };
 
         $('.nav a').on('click', function(){
