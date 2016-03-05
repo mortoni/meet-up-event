@@ -8,7 +8,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#/"><span>Meet-Up Event Planner</span></a>
+            <a class="navbar-brand" href="javascript:;"><span>Meet-Up Event Planner</span></a>
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
@@ -20,7 +20,7 @@
                 <hr class="line-tracejada-blue small-device">
                 <li><a href="#/home">My Events  <span class="badge pull-right header-space">{{ event_qdt }}</span></a></li>
                 <li><a href="#/add">Add Event</a></li>
-                <li><a href="#/search">Look up Events</a></li>
+                <li><a href="#/search">Look up Events <span class="badge pull-right header-space">{{ events.length }}</span></a></li>
                 <li><a href="javascript:;" ng-click="logout()">Log out</a></li>
             </ul>
         </div>

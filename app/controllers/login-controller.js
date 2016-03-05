@@ -1,6 +1,6 @@
 (function() {
     'use strict';
-    angular.module('insta').controller('LoginCtrl', LoginCtrl);
+    angular.module('meetUp').controller('LoginCtrl', LoginCtrl);
 
     LoginCtrl.$inject = ['$scope', '$rootScope', '$location', 'APP_SETTINGS', '$firebaseAuth', '$firebaseArray'];
 
@@ -8,10 +8,11 @@
         var ref = new Firebase(APP_SETTINGS.FIREBASE_URL);
         var ref2 = new Firebase(APP_SETTINGS.FIREBASE_URL + '/users');
         var auth = $firebaseAuth(ref);
-
+        $rootScope.user = null;
         $scope.createdUser = false;
 
-        var teste = $rootScope.event_qdt;
+        var test = $rootScope.events;
+
         $scope.logout = function(){
            $rootScope.user = null;
            $location.path('/login');

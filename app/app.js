@@ -1,3 +1,3 @@
 (function(){
-    angular.module('insta', ['ngRoute', 'firebase', 'ngImgCrop']);
+    angular.module('meetUp', ['ngRoute', 'firebase', 'ngImgCrop']);
 })();

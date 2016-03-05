@@ -1,4 +1,4 @@
-angular.module('insta').directive('locationPicker', function() {
+angular.module('meetUp').directive('locationPicker', function() {
     return {
       restrict: 'E',
       require: 'ngModel',
@@ -10,11 +10,11 @@ angular.module('insta').directive('locationPicker', function() {
       },
       link: function(scope, element, attrs, controller) {
         var input = element.find('input')[0];
-        
+
         controller.$formatters.push(function (value) {
           return value ? value.name : value;
         });
-        
+
 
 
         var autocomplete = new google.maps.places.Autocomplete(input, {

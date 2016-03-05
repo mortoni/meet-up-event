@@ -1,6 +1,6 @@
 (function(){
     'use strict';
-    angular.module('insta').config(function ($routeProvider) {
+    angular.module('meetUp').config(function ($routeProvider) {
         $routeProvider
             .when('/home', {
                 controller: 'HomeCtrl',

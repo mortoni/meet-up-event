@@ -1,6 +1,6 @@
 (function () {
     'use strict';
-    angular.module('insta').controller('EventAddCtrl', EventAddCtrl);
+    angular.module('meetUp').controller('EventAddCtrl', EventAddCtrl);
 
     EventAddCtrl.$inject = ['$scope', 'APP_SETTINGS', '$firebaseArray', '$rootScope', '$location'];
 

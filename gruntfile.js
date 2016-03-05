@@ -3,7 +3,7 @@ module.exports = function(grunt) {
         cssmin: {
             sitecss: {
                 files: {
-                    'dist/assets/css/styles-1.0.8.min.css': [
+                    'dist/assets/css/styles-1.0.11.min.css': [
                         'bower_components/bootswatch/paper/bootstrap.css',
                         'bower_components/animate.css/animate.css',
                         'bower_components/font-awesome/css/font-awesome.css',

@@ -1,9 +1,9 @@
 (function () {
-    angular.module('insta').constant('APP_SETTINGS', {
+    angular.module('meetUp').constant('APP_SETTINGS', {
         "FIREBASE_URL": "https://udacityone.firebaseio.com/"
     });
 
-    angular.module('insta').run(function ($rootScope, $location, APP_SETTINGS) {
+    angular.module('meetUp').run(function ($rootScope, $location, APP_SETTINGS) {
         var ref_users = new Firebase(APP_SETTINGS.FIREBASE_URL + '/users');
         var ref_events = new Firebase(APP_SETTINGS.FIREBASE_URL + '/events');
 
@@ -12,7 +12,7 @@
 
         getUsers();
         getEvents();
-        
+
         function getUsers(){
             ref_users.on("value", function(snapshot) {
                 $rootScope.users = [];
