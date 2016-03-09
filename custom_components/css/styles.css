@@ -15,8 +15,6 @@
 html,
 body {
   min-height: 100%;
-  background-image: url("../images/Wooden-background.jpg");
-  /*background-image: url("../../dev/assets/images/Wooden-background.jpg");*/
 }
 
 a,
@@ -109,14 +107,12 @@ small {
   padding: 2rem;
   /* for firefox 31 */
   transform: rotateY(0deg);
-  border: 2px dashed #2196f3;;
   background: #ffffff;
 }
 .form__signup {
   padding: 2rem;
   /*margin-left: -3.95rem;*/
   transform: rotateY(180deg);
-  border: 2px dashed #2196f3;;
   background: #ffffff;
 }
 .form__header {
@@ -214,9 +210,6 @@ label[for="checkbox"] {
 }
 /*//*/
 
-.line-tracejada{
-  border: 2px dashed #0c7cd5;
-}
 .line-tracejada-blue{
   border: 1px dashed #0c7cd5;
   margin-top: 0px;
@@ -231,8 +224,10 @@ label[for="checkbox"] {
   width: 30px;
   height: 30px;
   margin-right: 10px;
-  border: 2px dashed white;
+  margin-bottom: -9px;
+  margin-top: -10px;
 }
+
 @media screen
   and (min-device-width: 750px)
   and (max-device-width: 1600px){
@@ -245,19 +240,7 @@ label[for="checkbox"] {
     box-shadow: 3px 3px 32px rgba(0,0,0,.25);
     padding-left: 0px;
     padding-right: 0px;
-    border: 2px dashed #2196f3;
-}
-
-.navbar{
-  border: 2px dashed white !important;
-}
-
-.navbar-inverse .navbar-toggle {
-    border: 2px dashed white;
-}
-
-.navbar-inverse .navbar-toggle {
-    border: 2px dashed white;
+    border-radius: 5%;
 }
 
 .myInput {
@@ -279,24 +262,7 @@ label[for="checkbox"] {
     transition: all 0.5s ease-in-out !important;
 }
 
-.navbar-inverse {
-    background-color: transparent;
-    border-color: transparent;
-}
-
 .login-title {
-    color: #2196f3;
-}
-
-.navbar-inverse .navbar-toggle .icon-bar {
-    background-color: #2196f3;
-}
-
-.navbar-inverse .navbar-brand {
-    color: #2196f3;
-}
-
-.navbar-inverse .navbar-nav > li > a {
     color: #2196f3;
 }
 
@@ -309,17 +275,20 @@ label[for="checkbox"] {
     box-shadow: 3px 3px 32px rgba(0,0,0,.25);
     padding-top: 8px;
     padding-bottom: 8px;
-    border: 2px dashed #2196f3;
-}
-.form-control-2 {
-  color: #eeeeee !important;
 }
 
-.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
-    color: #094EA9;
-    background-color: transparent;
-}
 .badge {
     color: #2196f3;
     background-color: #FFFFFF;
+}
+
+.thumbnail-header{
+  background-color: skyblue;
+  margin-top: -36px;
+  margin-left: -9px;
+  margin-right: -9px;
+}
+
+.center-block {
+    display: table;
 }

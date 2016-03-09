@@ -6,45 +6,45 @@
 
         <div class="form-group" ng-class="{ 'has-error' : addEvent.name.$invalid }">
             Name
-            <input type="text" name="name" class="form-control myInput" ng-model="event.name" ng-minlength="3" placeholder="e.g. New Year Party">
+            <input type="text" name="name" class="form-control" ng-model="event.name" ng-minlength="3" placeholder="e.g. New Year Party">
             <p class="help-block" ng-show="addEvent.name.$error.minlength">Min name length is 3 characters</p>
         </div>
 
         <div class="form-group row">
         	<label class="col-sm-2">Type</label>
-        	<select name="type" id="typeSelect" ng-model="event.type" class="col-sm-2" required>
-				<option value="Birthday party">Birthday party</option>
-				<option value="Conference talk">Conference talk</option>
-				<option value="Wedding">Wedding</option>
-				<option value="Seminars">Seminars</option>
-				<option value="Meeting">Meeting</option>
-				<option value="Theme Party">Theme Party</option>
-				<option value="Party">Party</option>
-				<option value="Other">Other</option>
-			</select>
+	        <select name="type" id="typeSelect" ng-model="event.type" class="col-sm-6" required>
+						<option value="Birthday party">Birthday party</option>
+						<option value="Conference talk">Conference talk</option>
+						<option value="Wedding">Wedding</option>
+						<option value="Seminars">Seminars</option>
+						<option value="Meeting">Meeting</option>
+						<option value="Theme Party">Theme Party</option>
+						<option value="Party">Party</option>
+						<option value="Other">Other</option>
+					</select>
         </div>
 
         <div class="form-group" ng-class="{ 'has-error' : addEvent.host.$invalid }">
             Host
-            <input type="text" name="host" class="form-control myInput" ng-model="event.host" ng-minlength="3" placeholder="e.g. Melbas">
+            <input type="text" name="host" class="form-control" ng-model="event.host" ng-minlength="3" placeholder="e.g. Melbas">
             <p class="help-block" ng-show="addEvent.host.$error.minlength">Min host length is 3 characters</p>
         </div>
 
         <div class="form-group" ng-class="{ 'has-error' : addEvent.startDate.$invalid }">
         	Start date
-            <input type="datetime-local" name="startDate" class="form-control myInput" ng-model="event.startDate" ng-change="DateChanged()">
+            <input type="datetime-local" name="startDate" class="form-control" ng-model="event.startDate" ng-change="DateChanged()">
             <p class="help-block" ng-show="addEvent.startDate.$invalid">Invalid Date</p>
         </div>
 
         <div class="form-group" ng-class="{ 'has-error' : addEvent.endDate.$invalid }">
         	End date
-            <input type="datetime-local" name="endDate" class="form-control myInput" ng-model="event.endDate" ng-change="DateChanged()">
+            <input type="datetime-local" name="endDate" class="form-control" ng-model="event.endDate" ng-change="DateChanged()">
             <p class="help-block" ng-show="addEvent.endDate.$invalid">Invalid Date</p>
         </div>
 
         <div class="form-group">
             Guest list
-            <input type="text" name="guest" class="form-control myInput" ng-model="event.guest" placeholder="e.g. Mom, Dad, ...">
+            <input type="text" name="guest" class="form-control" ng-model="event.guest" placeholder="e.g. Mom, Dad, ...">
         </div>
 
         <div class="form-group">

@@ -30,9 +30,13 @@
           $location.path('/home');
 
         }
+        Number.prototype.padLeft = function(base,chr){
+           var  len = (String(base || 10).length - String(this).length)+1;
+           return len > 0? new Array(len).join(chr || '0')+this : this;
+        }
 
         function getFormattedDate(date) {
-            var str = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear() + " " +  date.getHours() + ":" + date.getMinutes();
+            var str = date.getDate().padLeft() + "/" + ((date.getMonth() +1 ).padLeft()) + "/" + date.getFullYear() + " " +  date.getHours() + ":" + date.getMinutes();
             return str;
         }
 
