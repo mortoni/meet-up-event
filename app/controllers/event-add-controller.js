@@ -26,6 +26,7 @@
 	        };
 
         	ref.push(event);
+          $rootScope.event_qdt++;
 
           $location.path('/home');
 

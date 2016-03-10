@@ -9,6 +9,7 @@
 
         $rootScope.users = [];
         $rootScope.events = [];
+        $rootScope.event_qdt = 0;
 
         getUsers();
         getEvents();
@@ -27,7 +28,6 @@
         function getEvents(){
             ref_events.on("value", function(snapshot) {
                 $rootScope.events = [];
-                $rootScope.event_qdt = 0;
                 snapshot.forEach(function(childSnapshot) {
                     $rootScope.events.push(childSnapshot.val());
                 });
