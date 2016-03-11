@@ -11,12 +11,18 @@ You can see a demo working [here](https://udacityone.firebaseapp.com/).
 
 ## Dependecies
 - Node.js (https://nodejs.org/)
-- bower (http://bower.io/)
-- grunt-cli (http://gruntjs.com/)
 
-## Instalation
-Installation via npm: `npm install http-server -g`
 
 ## Running
-My usual way is open Terminal tabs and running on root fold of project: `http-server`
+
+My usual way is open Terminal tab and running on root fold of project:
+
+- bower install (Install packages that we need for the project)
+  `$ bower install`
+- npm install (Create a folder **node_modules**, and store our dependencies there)
+  `$ npm install`
+- grunt (server)
+  `$ grunt`
+- http://localhost:1337/dev/#/login (paste and copy on url browser, you can change port on **gruntfile.js**)
+
 
