@@ -1,5 +1,5 @@
 {
-  "name": "instagram-firebase-web",
+  "name": "meet-up",
   "version": "1.0.0",
   "description": "",
   "main": "gruntfile.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/andrebaltieri/instagram-firebase-web.git"
+    "url": "git+https://github.com/mortoni/meet-up-event"
   },
-  "author": "",
+  "author": "Alan Pereira Mortoni",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/andrebaltieri/instagram-firebase-web/issues"
+    "url": "https://github.com/mortoni/meet-up-event/issues"
   },
-  "homepage": "https://github.com/andrebaltieri/instagram-firebase-web#readme",
+  "homepage": "https://github.com/mortoni/meet-up-event/blob/master/README.md",
   "dependencies": {
     "bower": "^1.4.1",
     "grunt": "^0.4.5",
@@ -23,6 +23,7 @@
     "grunt-contrib-copy": "^0.8.1",
     "grunt-contrib-cssmin": "^0.13.0",
     "grunt-contrib-htmlmin": "^0.4.0",
-    "grunt-contrib-uglify": "^0.9.1"
+    "grunt-contrib-uglify": "^0.9.1",
+    "grunt-connect": "^0.2.0"
   }
 }

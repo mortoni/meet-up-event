@@ -1,5 +1,11 @@
 module.exports = function(grunt) {
     grunt.initConfig({
+      pkg: grunt.file.readJSON('package.json'),
+    		connect: {
+    			example: {
+    				port: 1337
+    			}
+    		},
         cssmin: {
             sitecss: {
                 files: {
@@ -87,4 +93,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
+
+    grunt.loadNpmTasks('grunt-connect');
+	  grunt.registerTask('default', 'connect:example');
 };
