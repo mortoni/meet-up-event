@@ -99,5 +99,7 @@
     $('.nav a').on('click', function(){
       $('.navbar-toggle').click()
     });
+
+    $("#log_email").focus();
   }
 })();
