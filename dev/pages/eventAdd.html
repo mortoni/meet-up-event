@@ -12,7 +12,9 @@
 
         <div class="form-group row">
         	<label for="typeSelect" class="col-sm-2">Type</label>
-	        <select name="type" id="typeSelect" ng-model="event.type" class="col-sm-6" required>
+					<input id="typeSelect" list="list" ng-model="event.type" >
+
+	        <datalist id="list" name="type">
 						<option value="Birthday party">Birthday party</option>
 						<option value="Conference talk">Conference talk</option>
 						<option value="Wedding">Wedding</option>
@@ -21,7 +23,8 @@
 						<option value="Theme Party">Theme Party</option>
 						<option value="Party">Party</option>
 						<option value="Other">Other</option>
-					</select>
+					</datalist>
+					
         </div>
 
         <div class="form-group" ng-class="{ 'has-error' : addEvent.host.$invalid }">

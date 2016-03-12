@@ -5,6 +5,6 @@
     SearchCtrl.$inject = ['$scope', 'APP_SETTINGS','$firebaseArray', '$rootScope'];
 
     function SearchCtrl($scope, APP_SETTINGS, $firebaseArray, $rootScope) {
-
+      $("#search").focus();
     }
 })();
