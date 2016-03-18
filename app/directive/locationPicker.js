@@ -2,9 +2,11 @@ angular.module('meetUp').directive('locationPicker', function() {
     return {
       restrict: 'E',
       require: 'ngModel',
-      template: '<input id="{{ id }}" type="text" class="form-control" placeholder="" />',
+      template: '<input id="{{ id }}" name="event_location" type="text" class="form-control" placeholder="{{placeholder}}" required/>',
+
       scope: {
         id: '@',
+        name: '@',
         class: '@',
         placeholder: '@',
       },

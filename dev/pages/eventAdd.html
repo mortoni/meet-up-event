@@ -4,15 +4,32 @@
 
 	<form name="addEvent" role="form" autocomplete="off">
 
-        <div class="form-group" ng-class="{ 'has-error' : addEvent.name.$invalid }">
+        <!--<div class="form-group" ng-class="{ 'has-error' : addEvent.name.$invalid }">
 						<label for="event_name">Name</label>
             <input id="event_name"type="text" name="name" class="form-control" ng-model="event.name" ng-minlength="3" placeholder="e.g. New Year Party" autofocus>
             <p class="help-block" ng-show="addEvent.name.$error.minlength">Min name length is 3 characters</p>
-        </div>
+        </div>-->
 
-        <div class="form-group row">
+				<div class="form-group" ng-class="{ 'has-error' : addEvent.name.$invalid && !addEvent.name.$pristine }">
+						<label for="name">Name</label>
+						<input type="text"
+									 name="name"
+									 class="form-control"
+									 ng-model="event.name"
+									 ng-minlength="3"
+									 placeholder="e.g. New Year Party"
+									 autofocus
+									 required>
+
+						 <div ng-messages="addEvent.name.$error" role="alert" ng-if='addEvent.name.$dirty'>
+							 <div ng-message="required">Name required</div>
+							 <div ng-message="minlength">Enter at least 3 characters.</div>
+						 </div>
+				</div>
+
+        <div class="form-group row ng-class="{ 'has-error' : addEvent.name.$invalid && !addEvent.name.$pristine }"">
         	<label for="typeSelect" class="col-sm-2">Type</label>
-					<input id="typeSelect" list="list" ng-model="event.type" >
+					<input name="typeSelect" list="list" ng-model="event.type" required>
 
 	        <datalist id="list" name="type">
 						<option value="Birthday party">Birthday party</option>
@@ -24,19 +41,37 @@
 						<option value="Party">Party</option>
 						<option value="Other">Other</option>
 					</datalist>
-					
+
+					<div ng-messages="addEvent.list.$error" role="alert" ng-if='addEvent.list.$dirty'>
+						<div ng-message="required">Type required</div>
+					</div>
         </div>
 
-        <div class="form-group" ng-class="{ 'has-error' : addEvent.host.$invalid }">
+        <!--<div class="form-group" ng-class="{ 'has-error' : addEvent.host.$invalid }">
             <label for="event_host">Host</label>
             <input id="event_host" type="text" name="host" class="form-control" ng-model="event.host" ng-minlength="3" placeholder="e.g. Melbas">
             <p class="help-block" ng-show="addEvent.host.$error.minlength">Min host length is 3 characters</p>
-        </div>
+        </div>-->
+
+				<div class="form-group" ng-class="{ 'has-error' : addEvent.host.$invalid && !addEvent.host.$pristine }">
+						<label for="host">Host</label>
+						<input type="text"
+									 name="host"
+									 class="form-control"
+									 ng-model="event.host"
+									 placeholder="e.g. Melbas"
+									 ng-minlength="3"
+									 required>
+
+						 <div ng-messages="addEvent.host.$error" role="alert" ng-if='addEvent.host.$dirty'>
+							 <div ng-message="required">Host required</div>
+							 <div ng-message="minlength">Enter at least 3 characters.</div>
+						 </div>
+				</div>
 
         <div class="form-group" ng-class="{ 'has-error' : addEvent.startDate.$invalid }">
-        		<label for="event_startDate">Start date</label>
-            <input id="event_startDate" type="datetime-local" name="startDate" class="form-control" ng-model="event.startDate" ng-change="DateChanged()">
-            <p class="help-block" ng-show="addEvent.startDate.$invalid">Invalid Date</p>
+        		<label for="startDate">Start date</label>
+            <input type="datetime-local" name="startDate" class="form-control" ng-model="event.startDate" ng-change="DateChanged()">
         </div>
 
         <div class="form-group" ng-class="{ 'has-error' : addEvent.endDate.$invalid }">
@@ -45,22 +80,56 @@
             <p class="help-block" ng-show="addEvent.endDate.$invalid">Invalid Date</p>
         </div>
 
-        <div class="form-group">
+        <!--<div class="form-group">
             <label for="event_guest">Guest list</label>
             <input id="event_guest" type="text" name="guest" class="form-control" ng-model="event.guest" placeholder="e.g. Mom, Dad, ...">
-        </div>
+        </div>-->
 
-        <div class="form-group">
+				<div class="form-group" ng-class="{ 'has-error' : addEvent.guest.$invalid && !addEvent.guest.$pristine }">
+						<label for="guest">Guest list</label>
+						<input type="text"
+									 name="guest"
+									 class="form-control"
+									 ng-model="event.guest"
+									 placeholder="e.g. Mom, Dad, ..."
+									 required>
+
+						<div ng-messages="addEvent.guest.$error" role="alert" ng-if='addEvent.guest.$dirty'>
+ 							<div ng-message="required">Guest(s) is required.</div>
+ 						</div>
+				</div>
+
+        <!--<div class="form-group">
             <label for="event_location">Location</label>
 						<location-picker id="event_location" ng-model="event.location"></location-picker>
-        </div>
+        </div>-->
 
-		<div class="form-group">
+				<div class="form-group" ng-class="{ 'has-error' : addEvent.event_location.$invalid && !addEvent.event_location.$pristine }">
+						<label for="local">Local</label>
+						<location-picker
+									 name="local"
+									 ng-model="event.location"
+									 placeholder="e.g. Australia, Gold Coast">
+					  </location-picker>
+
+						<p ng-show="addEvent.event_location.$invalid && !addEvent.event_location.$pristine" class="help-block">Local is required.</p>
+				</div>
+
+				<!--<div class="form-group">
             <label for="event_addInfo">Aditional Info.</label>
             <textarea  id="event_addInfo" name="addInfo" class="form-control" ng-model="event.info" placeholder="e.g. Social White Clothes"></textarea>
-        </div>
+        </div>-->
 
-        <p style="color:red;" ng-show="eventError">{{eventErrorMessage}}</p>
+				<div class="form-group">
+						<label for="addInfo">Aditional Info.</label>
+						<input type="text"
+									 name="addInfo"
+									 class="form-control"
+									 ng-model="event.info"
+									 placeholder="e.g. Social White Clothes">
+				</div>
+
+        <p class="error" ng-show="eventError">{{eventErrorMessage}}</p>
 
         <hr class="line-tracejada">
 

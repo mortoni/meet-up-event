@@ -8,6 +8,9 @@
     var ref = new Firebase(APP_SETTINGS.FIREBASE_URL);
     var ref2 = new Firebase(APP_SETTINGS.FIREBASE_URL + '/users');
     var auth = $firebaseAuth(ref);
+
+
+
     $rootScope.user = null;
     $scope.createdUser = false;
 
@@ -89,17 +92,18 @@
     };
 
     $scope.logFocus = function(){
-      $("#log_email").focus();
+      $('input[name=email]').focus();
     }
 
     $scope.regFocus = function(){
-      $("#reg_name").focus();
+      $('input[name=name]').focus();
     }
 
     $('.nav a').on('click', function(){
       $('.navbar-toggle').click()
     });
 
-    $("#log_email").focus();
+    //$("#log_email").focus();
+    $('input[name=email]').focus();
   }
 })();

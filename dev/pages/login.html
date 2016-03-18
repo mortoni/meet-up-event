@@ -9,19 +9,39 @@
 
             <div class="form__login">
                 <h1 class="form__header">Login</h1>
-                <form class="form-signin" name="signinForm" role="form" autocomplete="on">
+                <form class="form-signin" name="signinForm" role="form" autocomplete="on" novalidate>
 
-                    <div class="form-group" ng-class="{ 'has-error' : signinForm.email.$invalid }">
-                        <label for="log_email">Email</label>
-                        <input id="log_email" type="email" name="email" class="form-control" ng-model="user.email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" autofocus>
-                        <p class="help-block" ng-show="signinForm.email.$invalid">Enter a valid email.</p>
-                    </div>
+                  <div class="form-group" ng-class="{ 'has-error' : signinForm.email.$invalid && !signinForm.email.$pristine }">
+                      <label for="email">Email</label>
+                      <input type="email"
+                             name="email"
+                             class="form-control"
+                             ng-model="user.email"
+                             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                             required
+                             autofocus>
 
-                    <div class="form-group" ng-class="{ 'has-error' : signinForm.password.$invalid }">
-                        <label for="log_password">Password</label>
-                        <input id="log_password" type="password" name="password" class="form-control" ng-model="user.password" ng-minlength="8">
-                        <p class="help-block" ng-show="signinForm.password.$error.minlength">Min password length is 8 characters</p>
-                    </div>
+                     <div ng-messages="signinForm.email.$error" role="alert" ng-if='signinForm.email.$dirty'>
+                       <div ng-message="required">Email required</div>
+                       <div ng-message="email">Invalid email</div>
+                       <div ng-message="pattern">Invalid email</div>
+                     </div>
+                  </div>
+
+                  <div class="form-group" ng-class="{ 'has-error' : signinForm.password.$invalid && !signinForm.password.$pristine }">
+                      <label for="password">Password</label>
+                      <input type="password"
+                             name="password"
+                             class="form-control"
+                             ng-model="user.password"
+                             ng-minlength="8"
+                             required>
+
+                     <div ng-messages="signinForm.password.$error" role="alert" ng-if='signinForm.password.$dirty'>
+                       <div ng-message="required">Password required</div>
+                       <div ng-message="minlength">Enter at least 8 characters.</div>
+                     </div>
+                  </div>
 
                     <p style="color:red;" ng-show="signError">{{signErrorMessage}}</p>
 
@@ -40,34 +60,81 @@
                 <h1 class="form__header">Registration</h1>
                 <form class="form-signin" name="regForm">
 
-                    <div class="form-group" ng-class="{ 'has-error' : regForm.name.$invalid }">
-                        <label for="reg_name">Name</label>
-                        <input id="reg_name" type="text" name="name" class="form-control" ng-model="guest.name" ng-minlength="3" autofocus>
-                        <p class="help-block" ng-show="regForm.name.$invalid">Min name length is 3 characters.</p>
+                    <div class="form-group" ng-class="{ 'has-error' : regForm.name.$invalid && !regForm.name.$pristine }">
+                        <label for="name">Name</label>
+                        <input type="text"
+                               name="name"
+                               class="form-control"
+                               ng-model="guest.name"
+                               ng-minlength="3"
+                               required
+                               autofocus>
+
+                       <div ng-messages="regForm.name.$error" role="alert" ng-if='regForm.name.$dirty'>
+                         <div ng-message="required">Name required</div>
+                         <div ng-message="minlength">Enter at least 3 characters.</div>
+                       </div>
                     </div>
 
-                    <div class="form-group" ng-class="{ 'has-error' : regForm.job_title.$invalid }">
-                        <label for="reg_job_title">Job Title</label>
-                        <input id="reg_job_title" type="text" name="job_title" class="form-control" ng-model="guest.job_title" ng-minlength="3">
-                        <p class="help-block" ng-show="regForm.job_title.$invalid">Min job title length is 3 characters.</p>
+                    <div class="form-group" ng-class="{ 'has-error' : regForm.job_title.$invalid && !regForm.job_title.$pristine }">
+                        <label for="job_title">Job Title</label>
+                        <input type="text"
+                               name="job_title"
+                               class="form-control"
+                               ng-model="guest.job_title"
+                               ng-minlength="3"
+                               required>
+
+                       <div ng-messages="regForm.job_title.$error" role="alert" ng-if='regForm.job_title.$dirty'>
+                         <div ng-message="required">Job title required</div>
+                         <div ng-message="minlength">Enter at least 3 characters.</div>
+                       </div>
                     </div>
 
-                    <div class="form-group" ng-class="{ 'has-error' : regForm.reg_email.$invalid }">
+                    <div class="form-group" ng-class="{ 'has-error' : regForm.reg_email.$invalid && !regForm.reg_email.$pristine }">
                         <label for="reg_email">Email</label>
-                        <input id="reg_email" type="email" name="reg_email" class="form-control" ng-model="guest.email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
-                        <p class="help-block" ng-show="regForm.reg_email.$invalid">Enter a valid email.</p>
+                        <input type="email"
+                               name="reg_email"
+                               class="form-control"
+                               ng-model="guest.email"
+                               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                               required>
+
+                       <div ng-messages="regForm.reg_email.$error" role="alert" ng-if='regForm.reg_email.$dirty'>
+                         <div ng-message="required">Email required</div>
+                         <div ng-message="email">Invalid email</div>
+                         <div ng-message="pattern">Invalid email</div>
+                       </div>
                     </div>
 
-                    <div class="form-group" ng-class="{ 'has-error' : regForm.reg_password.$invalid }">
+                    <div class="form-group" ng-class="{ 'has-error' : regForm.reg_password.$invalid && !regForm.reg_password.$pristine }">
                         <label for="reg_password">Password</label>
-                        <input id="reg_password"type="password" name="reg_password" class="form-control" ng-model="guest.password" ng-minlength="8" ng-change="changePassword()" autocomplete="off">
-                        <p class="help-block" ng-show="regForm.reg_password.$error.minlength">Min password length is 8 characters.</p>
+                        <input type="password"
+                               name="reg_password"
+                               class="form-control"
+                               ng-model="guest.password"
+                               ng-minlength="8"
+                               required>
+
+                       <div ng-messages="regForm.reg_password.$error" role="alert" ng-if='regForm.reg_password.$dirty'>
+                         <div ng-message="required">Password required</div>
+                         <div ng-message="minlength">Enter at least 8 characters.</div>
+                       </div>
                     </div>
 
-                    <div class="form-group" ng-class="{ 'has-error' : regForm.password_confirm.$invalid }">
-                        <label for="reg_password_confirm">Confirm Password</label>
-                        <input id="reg_password_confirm"type="password" name="password_confirm" class="form-control" ng-model="guest.password_confirm" ng-minlength="8" ng-change="change()" autocomplete="off">
-                        <p class="help-block" ng-show="regForm.password_confirm.$error.minlength">Min password length is 8 characters.</p>
+                    <div class="form-group" ng-class="{ 'has-error' : regForm.password_confirm.$invalid && !regForm.password_confirm.$pristine }">
+                        <label for="password_confirm">Password</label>
+                        <input type="password"
+                               name="password_confirm"
+                               class="form-control"
+                               ng-model="guest.password_confirm"
+                               ng-minlength="8"
+                               required>
+
+                       <div ng-messages="regForm.password_confirm.$error" role="alert" ng-if='regForm.password_confirm.$dirty'>
+                         <div ng-message="required">Password required</div>
+                         <div ng-message="minlength">Enter at least 8 characters.</div>
+                       </div>
                     </div>
 
                     <p style="color:red;" ng-show="regError">{{regErrorMessage}}</p>

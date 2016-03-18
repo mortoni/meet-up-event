@@ -5,6 +5,6 @@
     HomeCtrl.$inject = ['$scope', 'APP_SETTINGS','$firebaseArray', '$rootScope'];
 
     function HomeCtrl($scope, APP_SETTINGS, $firebaseArray, $rootScope) {
-
+      var eventinhos = $rootScope.events;
     }
 })();
