@@ -9,6 +9,7 @@
 
       $scope.setLocal = function(event){
         $scope.area = event.location;
+        $scope.zoom = 15;
       }
     }
 })();

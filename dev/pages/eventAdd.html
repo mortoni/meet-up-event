@@ -27,9 +27,13 @@
 						 </div>
 				</div>
 
-        <div class="form-group row ng-class="{ 'has-error' : addEvent.name.$invalid && !addEvent.name.$pristine }"">
-        	<label for="typeSelect" class="col-sm-2">Type</label>
-					<input name="typeSelect" list="list" ng-model="event.type" required>
+        <div class="form-group" ng-class="{ 'has-error' : addEvent.typeSelect.$invalid && !addEvent.typeSelect.$pristine }">
+        	<label for="typeSelect">Type</label>
+					<input name="typeSelect" list="list" ng-model="event.type" class="form-control" required>
+
+					<div ng-messages="addEvent.typeSelect.$error" role="alert" ng-if='addEvent.typeSelect.$dirty'>
+						<div ng-message="required">Type required</div>
+					</div>
 
 	        <datalist id="list" name="type">
 						<option value="Birthday party">Birthday party</option>
@@ -42,9 +46,7 @@
 						<option value="Other">Other</option>
 					</datalist>
 
-					<div ng-messages="addEvent.list.$error" role="alert" ng-if='addEvent.list.$dirty'>
-						<div ng-message="required">Type required</div>
-					</div>
+
         </div>
 
         <!--<div class="form-group" ng-class="{ 'has-error' : addEvent.host.$invalid }">
@@ -64,15 +66,25 @@
 									 required>
 
 						 <div ng-messages="addEvent.host.$error" role="alert" ng-if='addEvent.host.$dirty'>
-							 <div ng-message="required">Host required</div>
+							 <div ng-message="required">Host is required</div>
 							 <div ng-message="minlength">Enter at least 3 characters.</div>
 						 </div>
 				</div>
 
-        <div class="form-group" ng-class="{ 'has-error' : addEvent.startDate.$invalid }">
+        <!--<div class="form-group" ng-class="{ 'has-error' : addEvent.startDate.$invalid }">
         		<label for="startDate">Start date</label>
             <input type="datetime-local" name="startDate" class="form-control" ng-model="event.startDate" ng-change="DateChanged()">
-        </div>
+        </div>-->
+
+				<div class="form-group" ng-class="{ 'has-error' : addEvent.startDate.$invalid && !addEvent.startDate.$pristine }">
+        		<label for="startDate">Start date</label>
+            <input type="datetime-local" name="startDate" class="form-control" ng-model="event.startDate" ng-change="DateChanged()" required>
+
+						<div ng-messages="addEvent.startDate.$error" role="alert" ng-if='addEvent.startDate.$dirty'>
+							<div ng-message="required">Start Date required</div>
+
+						</div>
+				</div>
 
         <div class="form-group" ng-class="{ 'has-error' : addEvent.endDate.$invalid }">
         		<label for="event_endDate">End date</label>

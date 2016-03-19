@@ -410,6 +410,9 @@ label[for="checkbox"] {
   background-color: #2196F3;
   padding-top: 10px;
 }
+.title-color{
+  color: aliceblue;
+}
 
 #areaMap, #addressMap
   {

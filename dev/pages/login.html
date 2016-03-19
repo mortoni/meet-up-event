@@ -82,11 +82,9 @@
                                name="job_title"
                                class="form-control"
                                ng-model="guest.job_title"
-                               ng-minlength="3"
-                               required>
+                               ng-minlength="3">
 
                        <div ng-messages="regForm.job_title.$error" role="alert" ng-if='regForm.job_title.$dirty'>
-                         <div ng-message="required">Job title required</div>
                          <div ng-message="minlength">Enter at least 3 characters.</div>
                        </div>
                     </div>
@@ -141,7 +139,7 @@
 
                     <label for="flipper__checkbox" class="form__link" ng-click="logFocus()"><h6>Login</h6></label>
 
-                    <button type="button" ng-click="doRegister()" ng-disabled="!guest.email || !guest.password || !guest.name || !guest.job_title ||guest.password != guest.password_confirm" class="btn btn-lg btn-primary btn-block">Register</button>
+                    <button type="button" ng-click="doRegister()" ng-disabled="!guest.email || !guest.password || !guest.name ||guest.password != guest.password_confirm" class="btn btn-lg btn-primary btn-block">Register</button>
                 </form>
             </div>
         </div>
