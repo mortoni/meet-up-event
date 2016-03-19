@@ -7,61 +7,37 @@
 </div>
 
 <br>
+<br>
 
-<div class="col-sm-6 col-md-4" ng-repeat="event in events | filter:eventSearch">
-	<div class="thumbnail event-box" ng-show="eventSearch">
-		<div class="caption">
-			<div class="thumbnail-header">
-				<h4><span class="center-block">{{ event.name }}</span></h4>
+<div class="col-md-8">
+	<div class="card-container col-sm-6 col-md-6" ng-repeat="event in events | filter:eventSearch">
+		<div class="card" ng-show="eventSearch" ng-click="setLocal(event)">
+			<div class="front bg-blue">
+				<div class="row">
+					<div class="col-xs-12">
+						<h4 class="text-center">{{ event.name }}</h4>
+					</div>
+					<div class="col-xs-12 row-fluid">
+						<span class="col-xs-3"><strong>Type:</strong></span> <span class="col-xs-9"> <i class="fa fa-diamond"></i> {{ event.type }}</span>
+						<span class="col-xs-3"><strong>Host: </strong> </span> <span class="col-xs-9"><i class="fa fa-globe"></i> {{ event.host }}</span>
+						<span class="col-xs-3"><strong>Start: </strong></span> <span class="col-xs-9"><i class="fa fa-calendar"></i> {{ event.start_date }}</span>
+						<span class="col-xs-3"><strong>End: </strong></span> <span class="col-xs-9"><i class="fa fa-calendar"></i> {{ event.end_date }}</span>
+						<span class="col-xs-3"><strong>Guests: </strong></span> <span class="col-xs-9"><i class="fa fa-th-list"></i> {{ event.guest_list }}</span>
+						<span class="col-xs-3"><strong>local: </strong></span> <span class="col-xs-9"><i class="fa fa-map-marker"></i> {{ event.location.name }}</span>
+						<span class="col-xs-3"><strong>Info: </strong></span> <span class="col-xs-9"><i class="fa fa-info"></i> {{ event.aditional_info }}</span>
+					</div>
+				</div>
 			</div>
-			<p>
-				<span><strong>Type: </strong>{{ event.type }}</span><br>
-				<span><strong>Host: </strong>{{ event.host }}</span><br>
-				<span><strong>Start Date: </strong>{{ event.start_date }}</span><br>
-				<span><strong>End Date: </strong>{{ event.end_date }}</span><br>
-				<span><strong>Guest list: </strong>{{ event.guest_list }}</span><br>
-				<span><strong>location: </strong>{{ event.location.name }}</span><br>
-				<span><strong>Info: </strong>{{ event.aditional_info }}</span>
-			</p>
+			<div class="back bg-slategray">
+			</div>
 		</div>
 	</div>
 </div>
 
-
-<div class="card-container col-sm-4 col-md-4">
-        <!-- card -->
-        <div class="card">
-            <!-- front card-->
-            <div class="front bg-blue">
-              <!-- row -->
-                <div class="row">
-                    <!-- col -->
-                    <div class="col-xs-12">
-                        <h4><span class="center-block"> Dia das bruxas </span></h4>
-                    </div>
-                    <!-- /col -->
-                    <!-- col -->
-                    <div class="col-xs-12">
-                        <span class="col-xs-4"><strong>Type:</strong></span> <span class="col-xs-7"> <i class="fa fa-diamond"></i> tipo</span>
-                        <span class="col-xs-4"><strong>Host: </strong> </span> <span class="col-xs-7"><i class="fa fa-globe"></i> host</span>
-                        <span class="col-xs-4"><strong>Start Date: </strong></span> <span class="col-xs-7"><i class="fa fa-calendar"></i> start date</span>
-                        <span class="col-xs-4"><strong>End Date: </strong></span> <span class="col-xs-7"><i class="fa fa-calendar"></i> end date</span>
-                        <span class="col-xs-4"><strong>Guest list: </strong></span> <span class="col-xs-7"><i class="fa fa-th-list"></i> guest list</span>
-                        <span class="col-xs-4"><strong>local: </strong></span> <span class="col-xs-7"><i class="fa fa-map-marker"></i> local</span>
-                        <span class="col-xs-4"><strong>Info: </strong></span> <span class="col-xs-7"><i class="fa fa-info"></i> info.</span>
-                    </div>
-                    <!-- /col -->
-                </div>
-              <!-- /row -->
-            </div>
-            <!-- /front card-->
-            <!-- back card-->
-            <div class="back bg-slategray">
-                <!-- row -->
-
-                <!-- /row -->
-            </div>
-            <!-- /back card-->
-        </div>
-        <!-- /card -->
-    </div>
+	<div class="col-md-4 hidden-sm" ng-if="eventSearch">
+		<div style="position: fixed;">
+			<div class="map-content-1">
+				<div area-based-google-map area="area" zoom="15" ></div>
+			</div>
+	</div>
+</div>

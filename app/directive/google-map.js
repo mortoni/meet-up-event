@@ -1,11 +1,10 @@
 angular.module('meetUp').directive('areaBasedGoogleMap', function () {
     return {
         restrict: "A",
-        template: '<div class="areaMap" id="{{ "object-" + index }}" {{index}}></div>',
+        template: "<div id='areaMap'></div>",
         scope: {
             area: "=",
-            zoom: "=",
-            index: '='
+            zoom: "="
         },
         controller: function ($scope) {
             var mapOptions;
@@ -18,7 +17,8 @@ angular.module('meetUp').directive('areaBasedGoogleMap', function () {
                     center: new google.maps.LatLng(40.0000, -98.0000),
                     mapTypeId: google.maps.MapTypeId.TERRAIN
                 };
-                map = new google.maps.Map(document.getElementById('object-' + index), mapOptions);
+                map = new google.maps.Map
+(document.getElementById('areaMap'), mapOptions);
             };
 
             var createMarker = function (area) {

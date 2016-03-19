@@ -295,7 +295,6 @@ label[for="checkbox"] {
     perspective: 600px;
     width: 100%;
     cursor: pointer;
-    box-shadow: 3px 3px 32px rgba(0,0,0,.25);
     z-index: 9; }
     .card-container .card-non-rotate {
       cursor: default !important;
@@ -325,6 +324,7 @@ label[for="checkbox"] {
       -moz-transition: all 0.4s ease-in-out;
       transition: all 0.4s ease-in-out; }
       .card-container .card .front-non-rotate {
+        box-shadow: 3px 3px 32px rgba(0,0,0,.25);
         height: 100%;
         position: relative;
         width: 100%;
@@ -404,11 +404,22 @@ label[for="checkbox"] {
   background-color: #3f4e62 !important;
   color: white !important;
 }
+.map-content-1{
+  height: 478px;
+  width: 400px;
+  background-color: #2196F3;
+  padding-top: 10px;
+}
 
-.areaMap, .addressMap
+#areaMap, #addressMap
   {
-    height: 210px;
-    width: 295px;
+    height: 448px;
+    width: 380px;
     margin: 10px;
     padding: 10px;
   }
+  .row-fluid {
+    white-space: nowrap;
+    text-overflow:ellipsis;
+    overflow: hidden; }
+}
