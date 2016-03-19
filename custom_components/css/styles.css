@@ -414,6 +414,10 @@ label[for="checkbox"] {
   color: aliceblue;
 }
 
+.card-center{
+  padding-top: 25%;
+}
+
 #areaMap, #addressMap
   {
     height: 448px;

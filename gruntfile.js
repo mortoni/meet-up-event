@@ -9,7 +9,7 @@ module.exports = function(grunt) {
         cssmin: {
             sitecss: {
                 files: {
-                    'dist/assets/css/styles-1.0.13.min.css': [
+                    'dist/assets/css/styles-1.0.15.min.css': [
                         'bower_components/bootswatch/paper/bootstrap.css',
                         'bower_components/animate.css/animate.css',
                         'bower_components/font-awesome/css/font-awesome.css',
@@ -35,6 +35,7 @@ module.exports = function(grunt) {
                     'bower_components/angularfire/dist/angularfire.js',
                     'bower_components/ngImgCrop/compile/minified/ng-img-crop.js',
                     'bower_components/toastr/toastr.js',
+                    'bower_components/angular-messages/angular-messages.js',
                     'app/app.js',
                     'app/config.js',
                     'app/routes.js',
@@ -42,7 +43,8 @@ module.exports = function(grunt) {
                     'app/controllers/login-controller.js',
                     'app/controllers/event-add-controller.js',
                     'app/controllers/search-controller.js',
-                    'app/directive/locationPicker.js'
+                    'app/directive/locationPicker.js',
+                    'app/directive/google-map.js'
                 ],
                 dest: 'dist/assets/js/scripts-1.0.0.min.js'
             }
