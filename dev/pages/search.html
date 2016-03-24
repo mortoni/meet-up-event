@@ -11,7 +11,7 @@
 
 <div class="col-md-8">
 	<div class="painel-animado card-container col-sm-6 col-md-6" ng-repeat="event in events | filter:eventSearch">
-		<div class="card">
+		<div class="card" ng-if="eventSearch">
 			<div class="front bg-blue">
 				<div class="row">
 					<div class="col-xs-12">
@@ -41,7 +41,7 @@
 	</div>
 </div>
 
-	<div class="visible-xs visible-sm col-md-4" ng-if="eventSearch">
+	<div class="hidden-xs hidden-sm col-md-4" ng-if="eventSearch">
 		<div style="position: fixed;">
 			<div class="map-content-1">
 				<div area-based-google-map area="area" zoom="15" ></div>
