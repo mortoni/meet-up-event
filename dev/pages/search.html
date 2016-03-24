@@ -1,7 +1,7 @@
 <div class="row">
 	<div class="col-md-4 col-md-offset-4">
 		<form>
-			<input id="search" type="text" placeholder="Search" ng-model="eventSearch" class="form-control form-control-2" autofocus>
+			<input id="search" type="text" placeholder="Search" ng-model="eventSearch" class="form-control form-control-2 " ng-model-options="{ debounce: 500 }" autofocus>
 		</form>
 	</div>
 </div>
@@ -10,8 +10,8 @@
 <br>
 
 <div class="col-md-8">
-	<div class="card-container col-sm-6 col-md-6" ng-repeat="event in events | filter:eventSearch">
-		<div class="card" ng-show="eventSearch">
+	<div class="painel-animado card-container col-sm-6 col-md-6" ng-repeat="event in events | filter:eventSearch">
+		<div class="card">
 			<div class="front bg-blue">
 				<div class="row">
 					<div class="col-xs-12">
@@ -41,7 +41,7 @@
 	</div>
 </div>
 
-	<div class="col-md-4" ng-if="eventSearch">
+	<div class="visible-xs visible-sm col-md-4" ng-if="eventSearch">
 		<div style="position: fixed;">
 			<div class="map-content-1">
 				<div area-based-google-map area="area" zoom="15" ></div>

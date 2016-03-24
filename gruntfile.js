@@ -9,7 +9,7 @@ module.exports = function(grunt) {
         cssmin: {
             sitecss: {
                 files: {
-                    'dist/assets/css/styles-1.0.15.min.css': [
+                    'dist/assets/css/styles-1.0.16.min.css': [
                         'bower_components/bootswatch/paper/bootstrap.css',
                         'bower_components/animate.css/animate.css',
                         'bower_components/font-awesome/css/font-awesome.css',
@@ -36,6 +36,7 @@ module.exports = function(grunt) {
                     'bower_components/ngImgCrop/compile/minified/ng-img-crop.js',
                     'bower_components/toastr/toastr.js',
                     'bower_components/angular-messages/angular-messages.js',
+                    'bower_components/angular-animate/angular-animate.js',
                     'app/app.js',
                     'app/config.js',
                     'app/routes.js',

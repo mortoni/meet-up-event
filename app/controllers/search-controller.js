@@ -7,6 +7,8 @@
     function SearchCtrl($scope, APP_SETTINGS, $firebaseArray, $rootScope) {
       $("#search").focus();
 
+      $scope.eventSearch = '';
+      
       $scope.setLocal = function(event){
         $scope.area = event.location;
         $scope.zoom = 15;
