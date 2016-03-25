@@ -59,3 +59,21 @@ angular.module('meetUp').directive('locationPicker', function() {
       }
     };
   });
+
+  angular.module('meetUp').directive('locationPicker', function() {
+    var ddo = {};
+
+    ddo.restrict = "E";
+
+    ddo.scope{
+      id: '@',
+      name: '@',
+      class: '@',
+      placeholder: '@',
+      carregaMap: '&'
+    };
+
+    ddo.template = '<input id="{{ id }}" ng-click="carregaMap()" name="event_location" type="text" class="form-control" placeholder="{{placeholder}}" required/>'
+
+    return ddo;
+    });
