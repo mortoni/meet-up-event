@@ -1,27 +1,50 @@
 # meet-up-event
-Meet-Up Event Planner, Project 1 from Udacity Senior Web Developer Nanodegree. Build with:
-- [AngularJS](https://angularjs.org/) v1.4.9
-- [Bootstrap](http://getbootstrap.com/) v3.3.6
-- [Firebase](https://www.firebase.com/) (back-end)
+Meet-Up Event Planner, Project 1 from Udacity Senior Web Developer Nanodegree. It's a responsive app with validation and user experience.  
+### Requirement  
+> You will build a responsive web application that allows the user to establish a meet-up event. The goal is to create an app that is a joy to use on both desktop and mobile. The application must allow someone to name their event, search for a host location (using a location API like Foursquare), set the capacity of the event, the start and end times, and input a description of the event.  
 
-This app intent to be a responsive design working on mobile devices and desktop as well. With minimum validation and user experience.
+> Udacity  
 
-## Demo
-You can see a demo working [here](https://udacityone.firebaseapp.com/).
+##[Demo](https://udacityone.firebaseapp.com/)  
+You can see a demo [here](https://udacityone.firebaseapp.com/).  
 
-## Dependecies
-- [Node.js](https://nodejs.org/)
+### Mobile  
+<img src="https://raw.githubusercontent.com/mortoni/meet-up-event/master/dev/assets/images/mobile-demo.png" width="393" height="800" />  
+### Desktop  
+![image](https://raw.githubusercontent.com/mortoni/meet-up-event/master/dev/assets/images/desktop-demo.png)  
 
+##Technologies
+[AngularJS](https://angularjs.org/)  
+[Firebase](https://www.firebase.com/)  
+JavaScript  
+HTML5  
+CSS3  
+Gulp
+BootStrap 3  
+JQuery  
 
-## Running
+##Dependencies
+- **Node.js**  
+You must download and install it [here](https://nodejs.org/en/).  
 
-My usual way is open Terminal tab and running on root fold of project:
+##Running
+Go to root folder of project, open your terminal and then follow steps:  
+###Development Server  
+- Installing dependencies:
+```{r, engine='bash', count_lines}
+$ npm install
+```
 
-- bower install (Install packages that we need for the project)  
-  `$ bower install`
-- npm install (Create a folder **node_modules**, and store our dependencies there)  
-  `$ npm install`
-- grunt (server)  
-  `$ grunt`
-- paste and copy on url browser, you can change port on **gruntfile.js**  
-http://localhost:1337/dev/#/login
+- Download packages:  
+```{r, engine='bash', count_lines}
+$ bower install
+```
+
+- Running server:  
+```{r, engine='bash', count_lines}
+$ grunt
+```
+
+##Features  
+**Version 1.0.0**  
+- First commit
