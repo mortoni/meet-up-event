@@ -9,7 +9,7 @@ Meet-Up Event Planner, Project 1 from Udacity Senior Web Developer Nanodegree. I
 You can see a demo [here](https://udacityone.firebaseapp.com/).  
 
 ### Mobile  
-<img src="https://raw.githubusercontent.com/mortoni/meet-up-event/master/dev/assets/images/mobile-demo.png" width="393" height="800" />  
+<img src="https://raw.githubusercontent.com/mortoni/meet-up-event/master/dev/assets/images/mobile-login.png" width="250" height="500" /> <img src="https://raw.githubusercontent.com/mortoni/meet-up-event/master/dev/assets/images/mobile-dashboard.png" width="250" height="500" /> <img src="https://raw.githubusercontent.com/mortoni/meet-up-event/master/dev/assets/images/mobile-add-event.png" width="250" height="500" />  
 ### Desktop  
 ![image](https://raw.githubusercontent.com/mortoni/meet-up-event/master/dev/assets/images/desktop-demo.png)  
 
