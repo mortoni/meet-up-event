@@ -65,7 +65,7 @@ angular.module('meetUp').directive('locationPicker', function() {
 
     ddo.restrict = "E";
 
-    ddo.scope{
+    ddo.scope = {
       id: '@',
       name: '@',
       class: '@',
